@@ -1,3 +1,30 @@
+const prompt = require("prompt-sync")(); //Imports the prompt-sync module to Node.js
+
+const speed = parseInt(prompt("Input the speed: ")); //Prompts the user to 'Input the speed'
+
+//This is a function that takes the speed as a parameter
+const demeritPointsCalc = (speed) => {
+  const speedLimit = 70; //We need a speedLimit variable
+  const kmDemerit = 5; //Calculates the speed after 5 kms
+
+  if (speed < speedLimit) {
+    //Inside the function, check if speed is less that speed limit
+    console.log("Ok"); //If the speed is less than the speed limit, say 'Ok'
+  } else {
+    const thePoints = Math.floor((speed - speedLimit) / kmDemerit); //This calculates the value of points.
+
+    if (thePoints > 12) {
+      //Checks if the points are greater than twelve
+      console.log("License suspended"); //If greater that 12, suspend the licence
+    } else {
+      console.log(`Points: ${thePoints}`); //If not, print out the points
+    }
+  }
+};
+
+demeritPointsCalc(speed); //Remember to call the funtion in order for it to run
+
+/*
 //This is used to import the prompt-sync module in Node.js
 const prompt = require("prompt-sync")();
 //The input is turned into an integer and stored in variable called speed
@@ -61,6 +88,7 @@ switch (true) {
   default:
     console.log("License suspended"); // The default gives me the default value when other cases have not satisfied the required standards
 }
+*/
 
 /*
 const prompt = require("prompt-sync")();
